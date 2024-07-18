@@ -19,18 +19,18 @@
 #define SVGKIT_MAC 0
 #endif
 
-// iOS and tvOS are very similar, UIKit exists on both platforms
-// Note: watchOS also has UIKit, but it's very limited
-#if TARGET_OS_IOS || TARGET_OS_TV
-#define SVGKIT_UIKIT 1
-#else
-#define SVGKIT_UIKIT 0
-#endif
-
 #if TARGET_OS_VISION
 #define SVGKIT_VISION 1
 #else
 #define SVGKIT_VISION 0
+#endif
+
+// iOS, visionOS and tvOS are very similar, UIKit exists on all platforms
+// Note: watchOS also has UIKit, but it's very limited
+#if TARGET_OS_IOS || TARGET_OS_TV || TARGET_OS_VISION
+#define SVGKIT_UIKIT 1
+#else
+#define SVGKIT_UIKIT 0
 #endif
 
 #if TARGET_OS_IOS
