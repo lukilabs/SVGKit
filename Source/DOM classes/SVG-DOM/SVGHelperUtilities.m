@@ -297,7 +297,11 @@
 	}
 	
 	/** If you're going to rasterize, Apple's code is dumb, and needs to be "told" if its using a Retina display */
-	layer.contentsScale = [[UIScreen mainScreen] scale];
+#if TARGET_OS_VISION
+    layer.contentsScale = 2.0;
+#else
+    layer.contentsScale = [[UIScreen mainScreen] scale];
+#endif
 	layer.rasterizationScale = _shapeLayer.contentsScale;
 #endif
 	

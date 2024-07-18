@@ -27,6 +27,12 @@
 #define SVGKIT_UIKIT 0
 #endif
 
+#if TARGET_OS_VISION
+#define SVGKIT_VISION 1
+#else
+#define SVGKIT_VISION 0
+#endif
+
 #if TARGET_OS_IOS
 #define SVGKIT_IOS 1
 #else
