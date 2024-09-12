@@ -148,6 +148,10 @@ static float cachedDevicePixelsPerInch;
 
 + (NSDictionary *)modelsPPIManifest
 {
+    /// Due to the peculiar diamond Sub-Pixels layout found in the iPhone X, iPhone XS and iPhone XS Max,
+    /// the actual density of the Red and Blue Sub-Pixels is lower than that of the Green Sub-Pixels,
+    /// being reportedly 324 Sub-Pixels per inch.
+    /// Peculiar diamond Sub-Pixels: https://www.displaymate.com/Diamond_45s.html
     NSDictionary *modelsPPIManifest = @{
         /// iPhone
         // iPhone 1
@@ -210,82 +214,94 @@ static float cachedDevicePixelsPerInch;
         @"iPhone10,2": @401,
         @"iPhone10,5": @401,
         
-        // iPhone X
+        // iPhone X, ppi 458/324
         @"iPhone10,3": @458,
         @"iPhone10,6": @458,
 
         // iPhone XR
         @"iPhone11,8": @326,
 
-        // iPhone XS
+        // iPhone XS, ppi 458/324
         @"iPhone11,2": @458,
 
-        // iPhone XS Max
+        // iPhone XS Max, ppi 458/324
         @"iPhone11,4": @458,
         @"iPhone11,6": @458,
         
         // iPhone 11
         @"iPhone12,1": @326,
 
-        // iPhone 11 Pro
+        // iPhone 11 Pro, ppi 458/324
         @"iPhone12,3": @458,
 
-        // iPhone 11 Pro Max
+        // iPhone 11 Pro Max, ppi 458/324
         @"iPhone12,5": @458,
 
         // iPhone SE 2
         @"iPhone12,8": @326,
 
-        // iPhone 12 mini
+        // iPhone 12 mini, ppi 476/337
         @"iPhone13,1": @476,
 
-        // iPhone 12
+        // iPhone 12, ppi 460/325
         @"iPhone13,2": @460,
 
-        // iPhone 12 Pro
+        // iPhone 12 Pro, ppi 460/325
         @"iPhone13,3": @460,
 
-        // iPhone 12 Pro Max
+        // iPhone 12 Pro Max, ppi 458/324
         @"iPhone13,4": @458,
         
-        // iPhone 13 mini
+        // iPhone 13 mini, ppi 476/337
         @"iPhone14,4": @476,
 
-        // iPhone 13
+        // iPhone 13, ppi 460/325
         @"iPhone14,5": @460,
 
-        // iPhone 13 Pro
+        // iPhone 13 Pro, ppi 460/325
         @"iPhone14,2": @460,
 
-        // iPhone 13 Pro Max
+        // iPhone 13 Pro Max, ppi 458/324
         @"iPhone14,3": @458,
 
         // iPhone SE 3rd Gen
         @"iPhone14,6": @326,
 
-        // iPhone 14
+        // iPhone 14, ppi 460/325
         @"iPhone14,7": @460,
 
-        // iPhone 14 Plus
+        // iPhone 14 Plus, ppi 458/324
         @"iPhone14,8": @458,
 
-        // iPhone 14 Pro
+        // iPhone 14 Pro, ppi 460/325
         @"iPhone15,2": @460,
 
-        // iPhone 14 Pro Max
+        // iPhone 14 Pro Max, ppi 460/325
         @"iPhone15,3": @460,
         
-        // iPhone 15
+        // iPhone 15, ppi 460/325
         @"iPhone15,4": @460,
 
-        // iPhone 15 Plus
+        // iPhone 15 Plus, ppi 460/325
         @"iPhone15,5": @460,
 
-        // iPhone 15 Pro
+        // iPhone 15 Pro, ppi 460/325
         @"iPhone16,1": @460,
 
-        // iPhone 15 Pro Max
+        // iPhone 15 Pro Max, ppi 460/325
         @"iPhone16,2": @460,
+        
+        // iPhone 16 Pro, ppi 460/325
+        @"iPhone17,1": @460,
+        
+        // iPhone 16 Pro Max, ppi 460/325
+        @"iPhone17,2": @460,
+        
+        // iPhone 16, ppi 460/325
+        @"iPhone17,3": @460,
+        
+        // iPhone 16 Plus, ppi 460/325
+        @"iPhone17,4": @460,
         
         /// iPad
         // iPad 1
