@@ -616,6 +616,13 @@ static float cachedDevicePixelsPerInch;
         return 132.0f; // Simulator, running on desktop machine
     }
 
+    if( [platform hasPrefix:@"vision"])
+    {
+        return 400.0f;
+    }
+
+    SVGKitLogWarn(@"[%@] Platform: %@", [self class], platform);
+
     NSAssert(FALSE, @"Cannot determine the PPI values for current device; returning 0.0f - hopefully this will crash your code (you CANNOT run SVG's that use CM/IN/MM etc until you fix this)" );
     return 0.0f; // Bet you'll get a divide by zero here...
 }
