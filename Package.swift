@@ -35,7 +35,8 @@ let package = Package(
             publicHeadersPath: "include",
             cSettings: [
                 .headerSearchPath("privateHeaders"),
-                .define("NS_BLOCK_ASSERTIONS", to: "1", .when(configuration: .release))
+                .define("NS_BLOCK_ASSERTIONS", to: "1", .when(configuration: .release)),
+                .define("NS_BLOCK_ASSERTIONS", to: "1", .when(configuration: .debug))
             ]
         ),
         .target(
